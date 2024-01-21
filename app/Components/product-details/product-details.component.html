@@ -1,0 +1,28 @@
+<div class="grid grid-cols-6 gap-4 m-10">
+  <mat-card class="example-card col-start-2 col-span-4">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title class="text-ellipsis overflow-hidden">{{ product.title }}</mat-card-title>
+        <mat-card-subtitle>Extra large</mat-card-subtitle>
+        <div>
+
+        </div>
+
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div class=" grid grid-cols-3 gap-4">
+        <img mat-card-image src="{{product.images}}" alt="{{ product.title }}">
+
+      </div>
+      <p>{{ product.description }}</p>
+      <p>Price: ${{ product.price }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="bg-[#002333]" (click)="addToCart()"><mat-icon
+          mat-list-icon>shopping_cart</mat-icon></button>
+      <input type="number" [(ngModel)]="Quantity" mat-button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

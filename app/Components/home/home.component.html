@@ -1,0 +1,69 @@
+<div class="container text-center mt-5 ">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="50">
+    <ul class="carousel-indicators">
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/assets/PhonesElectronicsSliderDesktopEN.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Slide 1 Title</h5>
+          <p>Slide 1 Description</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="assets\Appliances_UNDesktopEN.png" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Slide 2 Title</h5>
+          <p>Slide 2 Description</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/assets/MIEv.png" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Slide 2 Title</h5>
+          <p>Slide 2 Description</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="container bg-[#] mt-2">
+    <p class="text-center text-6xl text-gray-600">Market Egypt – Biggest Online Shopping Website</p>
+    <p class="text-justify text-3xl text-gray-500">Online shopping sites are now part of our everyday lives, because
+      everyone enjoys
+      the possibility of being able
+      to buy whatever they need, whether it’s clothing or electronics, without having to move an inch. It’s even
+      better when you can buy everything you’re looking for, all from the same store. This is what Market Egypt offers
+      and that’s what makes it one of the best online shopping websites in Egypt.</p>
+  </div>
+  <h1 class=" text-left font-bold">Top Sellers</h1>
+  <p class="text-left text-gray-500">This week's hottest products</p>
+
+  <div class="row text-center ">
+    <div class="col-md-2 mb-4 " *ngFor="let prd of products">
+      <div class="card best-seller-card ">
+        <img src="{{prd.image}}" class="card-img-top" alt="Product" routerLink="/details/{{prd.id}}">
+        <div class="card-body text-[#60A9A6] bg-[#F5FEC0]">
+          <h5 class="card-title truncate">{{ prd.title }}</h5>
+          <p class="card-text">Price :{{ prd.price }} $</p>
+          <a href="#" class="btn bg-[#60A9A6] text-[#F5FEC0]" routerLink="/details/{{prd.id}}">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

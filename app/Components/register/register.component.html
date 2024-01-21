@@ -1,0 +1,40 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <img src=" assets\user.webp" class="img-fluid" alt="user icon">
+      </div>
+      <h2>Create an account</h2>
+    </div>
+
+  
+    <!-- Login Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="Submit()" >
+      <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name" formControlName="Name">
+      <small *ngIf="Name?.invalid && Name?.dirty ||Name?.touched" class="text-danger">
+      <div *ngIf="eMail?.errors?.['required']">Name is required</div>
+      <div *ngIf="eMail?.errors?.['pattern']">Name does not match</div>
+      </small>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="eMail">
+      <small *ngIf="eMail?.invalid && eMail?.dirty ||eMail?.touched" class="text-danger">
+      <div *ngIf="eMail?.errors?.['required']">E-Mail is required</div>
+      <div *ngIf="eMail?.errors?.['email'] "> E-Mail is not valid</div>
+      </small>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <small *ngIf="password?.invalid && password?.dirty ||password?.touched" class="text-danger">
+        <div *ngIf="password?.errors?.['required']">Passowrd is required</div>
+        <div *ngIf="password?.errors?.['password'] "> Password is not valid</div>
+        </small>
+          <!-- Remind Passowrd -->
+          <div id="formFooter d-flex justify-content-between">
+            <button type="submit" id="submit" class=" m-4"  >Register</button>
+            <a class="underlineHover mb-2" routerLink="/login">Already have an account?</a>
+          </div>
+    </form>
+    
+
+  </div>
+</div>  

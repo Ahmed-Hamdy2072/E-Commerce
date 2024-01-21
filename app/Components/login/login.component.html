@@ -1,0 +1,32 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <img src=" assets\user.webp" class="img-fluid" alt="user icon">
+      </div>
+      <h2>Login</h2>
+    </div>
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="loginForm" >
+      <input type="email" id="Email" class="fadeIn third" name="Email" placeholder="Email" formControlName="eMail">
+      <small *ngIf="eMail?.invalid && eMail?.dirty ||eMail?.touched" class="text-danger">
+        <div *ngIf="eMail?.errors?.['required']">Passowrd is required</div>
+        <div *ngIf="eMail?.errors?.['email'] "> E-Mail is not valid</div>
+        </small>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <small *ngIf="password?.invalid && password?.dirty ||password?.touched" class="text-danger">
+        <div *ngIf="password?.errors?.['required']">Passowrd is required</div>
+        </small>
+        <div id="formFooter" class="d-flex justify-content-between">
+          <button type="submit" id="submit" class=" m-2" [disabled]="loginForm.invalid" >Login</button>
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+    </form>
+
+    <!-- Remind Passowrd -->
+
+  </div>
+</div>  

@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center">Product Dashboard</h2>
+      <a class="btn btn-primary mt-4 mb-4" routerLink="/addProduct">Add Product</a>
+      <hr>
+      <div class="my-4 w-50">
+        <app-select [data]="Catergories" [title]="'Catergories'" (SelectedData)="FilterCat($event)"></app-select>
+      </div>
+      <div class="container">
+        <div class="row text-center  ">
+          <div id="card" class="col-md-3 col-lg-3" *ngFor="let prd of products">
+            <div class="card-content">
+              <a class="spectrum-a"><img class="spectrum1" id="cardImg" src="{{ prd.image }}" />
+                <h4 class="spectrum-h2">Price : {{ prd.price }} L.E</h4>
+                <div class="text-truncate">{{ prd.title }}</div>
+
+                <div class="text-truncate">{{prd.category}}</div>
+              </a>
+
+              <div class="d-flex justify-content-center">
+                <a class="btn btn-success me-5" data-bs-toggle="modal" data-bs-target="#EditPrd"
+                  routerLink="/editProduct/{{prd.id}}">
+                  Edit</a>
+                <button class="btn btn-danger " (click)="deletePrd(prd.id)"> Delete</button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>

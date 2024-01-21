@@ -1,0 +1,8 @@
+<div class="w-25 d-flex m-3">
+
+  <select name="title" id="title" class="form-control" (change)="FilterCat($event)">
+    <option value="0" selected>Select Catergory</option>
+    <option *ngFor="let cat of data">{{cat}}</option>
+
+  </select>
+</div>

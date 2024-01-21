@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+</head>
+
+<body class="bg-[#176B87] screen-full">
+  <mat-sidenav-container class="example-container ">
+    <mat-sidenav #sidenav mode="side">
+      <div class="grid grid-cols-6 bg-[#176B87] h-full overflow-hidden text-white">
+        <app-sidebar class=" col-start-2 col-span-6 "></app-sidebar>
+      </div>
+    </mat-sidenav>
+    <!-- Body -->
+
+    <app-navbar (sideNavToggle)="sidenav.toggle()"></app-navbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-container>
+
+
+
+
+
+  <app-footer></app-footer>
+</body>
+
+</html>
